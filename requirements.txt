@@ -1,0 +1,15 @@
+pandas
+numpy
+requests
+pymongo
+dnspython
+python-dotenv
+scikit-learn
+keras
+tensorflow
+matplotlib
+seaborn
+zenml
+streamlit
+mlflow
+zenml[server]
