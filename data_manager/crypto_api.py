@@ -21,11 +21,14 @@ def fetch_crypto_data(api_uri):
     )
 
     if response.status_code == 200:
-        print('API Connection Successful! \nFetching the data...') 
+        logging.info('API Connection Successful! \nFetching the data...') 
         data = response.json()
         data_list = data.get('Data', []) 
         df = pd.DataFrame(data_list) 
         df['DATE'] = pd.to_datetime(df['TIMESTAMP'], unit='s') 
+        logging.info(f"df.head : {df.head()}")
+        logging.info(f"df.tail: {df.tail()}")
+        logging.info(f"df length: {len(df)}")
         return df 
     else:
         raise Exception(f"API Error: {response.status_code} - {response.text}")
@@ -34,4 +37,6 @@ def fetch_crypto_data(api_uri):
 if __name__ == "__main__":
     API_URI = os.getenv("API_URI")
     df = fetch_crypto_data(api_uri = API_URI)
-    logging.info(f"df : {df.head()}")
+    logging.info(f"df.head : {df.head()}")
+    logging.info(f"df.tail: {df.tail()}")
+    logging.info(f"df length: {len(df)}")

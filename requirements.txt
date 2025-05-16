@@ -13,4 +13,5 @@ zenml
 streamlit
 mlflow
 zenml[server]
--e .
+pymongo[srv]
+# -e .

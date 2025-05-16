@@ -3,7 +3,7 @@ import logging
 from pymongo import MongoClient
 from dotenv import load_dotenv
 import pandas as pd
-from src.logging import logger
+from src.logging.logger import logging
 from src.exception_handling.custom_exception import BitCoinException
 
 load_dotenv() 
