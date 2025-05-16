@@ -1,2 +1,5 @@
 .env
-venv
+bitcoin
+__pycache__
+logs
+BitcoinPricePredictor.egg-info
